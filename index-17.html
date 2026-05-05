@@ -1,0 +1,1156 @@
+<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/><title>Elena Kervennic — Portfolio</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap');
+:root{--a:#e94560;--a2:#7c3aed;--bg:#060612;--card:rgba(255,255,255,.04);--bd:rgba(255,255,255,.08);--t:#f0f0f5;--m:#8888aa;}
+*{margin:0;padding:0;box-sizing:border-box;}body{cursor:none;font-family:'Space Grotesk',sans-serif;background:var(--bg);color:var(--t);overflow-x:hidden;}
+#cursor{width:12px;height:12px;background:var(--a);border-radius:50%;position:fixed;pointer-events:none;z-index:9999;transition:transform .15s;mix-blend-mode:difference;}
+#cf{width:36px;height:36px;border:1px solid rgba(233,69,96,.5);border-radius:50%;position:fixed;pointer-events:none;z-index:9998;transition:all .12s ease-out;}
+#bgc{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none;}
+#loader{position:fixed;inset:0;z-index:10000;overflow:hidden;display:flex;align-items:center;justify-content:center;background:#0a0a0a;transition:opacity .9s,transform 1.4s cubic-bezier(.4,0,.2,1);}
+#loader.out{opacity:0;transform:scale(1.1);pointer-events:none;}
+.fw{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  overflow:hidden;
+  display:grid;display:grid;grid-template-columns:repeat(6,1fr);.fw{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  display:grid;
+  grid-template-columns:repeat(6,1fr);
+  grid-template-rows:repeat(4,1fr);
+  gap:12px;
+  padding:12px;
+  overflow:hidden;
+  animation:fwz 12s ease-in-out infinite alternate;
+};gap:12px;padding:8px;animation:fwz 12s ease-in-out infinite alternate;}
+@keyframes fwz{from{transform:scale(1)}to{transform:scale(1.08)}}
+.fp2{border-radius:3px;padding:10px 8px;background:#f0dfc0;box-shadow:3px 3px 14px rgba(0,0,0,.7);display:flex;flex-direction:column;align-items:center;text-align:center;min-height:140px;position:relative;overflow:hidden;}
+.fp2::before{content:'✦ WANTED ✦';font-family:'Space Mono',monospace;font-size:.5rem;letter-spacing:3px;color:#8b1a1a;font-weight:700;display:block;border-bottom:1px solid #8b6914;width:100%;padding-bottom:5px;margin-bottom:6px;}
+.fp2-em{font-size:1.8rem;margin:2px 0;filter:grayscale(1);}
+.fp2-n{font-family:'Space Mono',monospace;font-size:.5rem;font-weight:700;color:#1a0a00;}
+.fp2-r{font-size:.44rem;color:#8b1a1a;font-weight:700;font-family:'Space Mono',monospace;border-top:1px solid #c4a35a;padding-top:3px;margin-top:auto;width:100%;}
+.stamp{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%) rotate(-20deg);font-family:'Space Mono',monospace;font-size:.6rem;font-weight:700;letter-spacing:3px;padding:4px 10px;border:3px solid;border-radius:4px;pointer-events:none;opacity:.85;}
+.stamp.cap{color:#166534;border-color:#166534;}.stamp.act{color:#991b1b;border-color:#991b1b;}
+.lo{
+  position:absolute;
+  inset:0;
+  background:linear-gradient(135deg,rgba(6,6,18,.62),rgba(20,4,40,.3));
+  pointer-events:none;
+}.lc{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center;}
+.ll{font-family:'Space Mono',monospace;font-size:2rem;color:var(--a);letter-spacing:6px;}
+.lfile{font-family:'Space Mono',monospace;font-size:.58rem;color:var(--m);letter-spacing:3px;margin-top:-8px;}
+.lseq{min-height:26px;font-family:'Space Mono',monospace;font-size:.8rem;color:rgba(255,255,255,.65);letter-spacing:2px;}
+.lseq span{opacity:0;animation:lfa .4s forwards;}
+@keyframes lfa{to{opacity:1}}
+.lbw{width:200px;height:2px;background:rgba(255,255,255,.1);border-radius:2px;overflow:hidden;}
+.lbf{height:100%;background:linear-gradient(90deg,var(--a),var(--a2));width:0%;transition:width .4s;}
+.ebtn{background:transparent;border:1px solid var(--a);color:var(--t);font-family:'Space Mono',monospace;font-size:.76rem;letter-spacing:5px;padding:17px 50px;cursor:pointer;text-transform:uppercase;opacity:0;pointer-events:none;margin-top:6px;position:relative;overflow:hidden;transition:all .35s;}
+.ebtn::before{content:'';position:absolute;inset:0;background:var(--a);transform:scaleX(0);transform-origin:left;transition:transform .35s;}
+.ebtn span{position:relative;z-index:1;}
+.ebtn.show{opacity:1;pointer-events:all;animation:eglow 2.5s ease-in-out infinite;}
+.ebtn:hover::before{transform:scaleX(1);}
+@keyframes eglow{0%,100%{box-shadow:0 0 16px rgba(233,69,96,.25)}50%{box-shadow:0 0 36px rgba(233,69,96,.55)}}
+.ldots{display:flex;gap:6px;}.ldots span{width:5px;height:5px;border-radius:50%;background:var(--m);animation:ldot 1.4s infinite both;}
+.ldots span:nth-child(2){animation-delay:.2s}.ldots span:nth-child(3){animation-delay:.4s}
+@keyframes ldot{0%,80%,100%{transform:scale(.5)}40%{transform:scale(1);background:var(--a)}}
+.snav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;justify-content:space-between;align-items:center;padding:13px 40px;backdrop-filter:blur(20px);background:rgba(6,6,18,.85);border-bottom:1px solid var(--bd);transform:translateY(-100%);transition:transform .4s;opacity:0;}
+.snav.vis{transform:translateY(0);opacity:1;}
+.snl{font-family:'Space Mono',monospace;font-size:.9rem;color:var(--a);letter-spacing:2px;text-decoration:none;}
+.snav ul{display:flex;gap:4px;list-style:none;flex-wrap:wrap;}
+.snav a{color:var(--m);text-decoration:none;font-size:.7rem;letter-spacing:1.5px;text-transform:uppercase;font-family:'Space Mono',monospace;padding:7px 12px;border-radius:8px;border:1px solid transparent;transition:all .3s;}
+.snav a:hover{border-color:rgba(233,69,96,.3);color:var(--a);}
+#hero{min-height:100vh;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;}
+.hbg{position:absolute;inset:0;z-index:0;background:repeating-linear-gradient(0deg,rgba(140,120,80,.2) 0 1px,transparent 1px 65px),repeating-linear-gradient(90deg,rgba(140,120,80,.2) 0 1px,transparent 1px 65px),#1a1209;}
+.hdetbg{
+  position:absolute;
+  inset:0;
+  z-index:1;
+  background:url("https://raw.githubusercontent.com/ekervennic/Portefolio/main/enquete-bg.png") center/cover no-repeat;
+  opacity:.28;
+  filter:sepia(.65) contrast(1.1) saturate(.8);
+  pointer-events:none;
+}.hdark{position:absolute;inset:0;z-index:2;background:linear-gradient(rgba(4,3,8,.2),rgba(8,5,15,.5));pointer-events:none;}
+.hcenter{display:flex;flex-direction:column;align-items:center;text-align:center;z-index:5;padding:80px 24px 60px;max-width:920px;width:100%;}
+.hbadge{font-family:'Space Mono',monospace;font-size:.68rem;color:var(--a);letter-spacing:4px;text-transform:uppercase;margin-bottom:18px;opacity:0;animation:fu .7s 3.8s forwards;}
+.hname{font-size:clamp(2.4rem,6vw,5.2rem);font-weight:700;line-height:1;letter-spacing:-2px;background:linear-gradient(135deg,#fff 40%,var(--a) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;opacity:0;animation:fu .8s 4s forwards;}
+.htyp{font-size:clamp(.9rem,1.8vw,1.1rem);color:var(--m);margin-top:12px;min-height:2rem;opacity:0;animation:fu .7s 4.2s forwards;}
+.htc{color:var(--a);animation:blink 1s infinite;}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+.hnotes{display:flex;gap:20px;flex-wrap:wrap;justify-content:center;margin-top:38px;margin-bottom:34px;opacity:0;animation:fu .8s 4.5s forwards;}
+.hnote{position:relative;padding:24px 18px 20px;border-radius:2px;text-decoration:none;display:flex;flex-direction:column;align-items:center;gap:7px;min-width:90px;transition:transform .3s cubic-bezier(.34,1.56,.64,1),box-shadow .3s;cursor:none;box-shadow:3px 5px 16px rgba(0,0,0,.6);}
+.hnote::after{content:'';position:absolute;bottom:0;left:0;right:0;height:55%;background:repeating-linear-gradient(to bottom,transparent 10px,rgba(0,0,0,.07) 10px,rgba(0,0,0,.07) 11px);pointer-events:none;}
+.hnote:hover{box-shadow:5px 10px 30px rgba(0,0,0,.75);z-index:10;}
+.npin{width:14px;height:14px;border-radius:50%;position:absolute;top:-8px;left:50%;transform:translateX(-50%);box-shadow:0 3px 6px rgba(0,0,0,.6);}
+.ncode{font-family:'Space Mono',monospace;font-size:.46rem;letter-spacing:2px;text-transform:uppercase;opacity:.65;}
+.ntxt{font-family:'Space Mono',monospace;font-size:.72rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;position:relative;z-index:1;}
+.ndesc{font-size:.54rem;opacity:.6;font-style:italic;text-align:center;z-index:1;position:relative;}
+.hcta{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;opacity:0;animation:fu .7s 5s forwards;}
+.hscroll{position:absolute;bottom:24px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;color:rgba(200,180,140,.5);font-size:.6rem;letter-spacing:2px;text-transform:uppercase;opacity:0;animation:fu .7s 5.4s forwards;z-index:5;font-family:'Space Mono',monospace;}
+.hsl{width:1px;height:40px;background:linear-gradient(to bottom,rgba(233,69,96,.7),transparent);animation:hsl 2s infinite;}
+@keyframes hsl{0%,100%{opacity:1}50%{opacity:.3}}
+@keyframes fu{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.tw{overflow:hidden;padding:18px 0;border-top:1px solid var(--bd);border-bottom:1px solid var(--bd);}
+.tk{display:flex;animation:tk 30s linear infinite;white-space:nowrap;}
+.ti2{display:inline-flex;align-items:center;gap:12px;padding:0 32px;font-family:'Space Mono',monospace;font-size:.8rem;color:var(--m);letter-spacing:1px;text-transform:uppercase;}
+.td2{width:5px;height:5px;background:var(--a);border-radius:50%;flex-shrink:0;}
+@keyframes tk{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .7s,transform .7s;}.reveal.visible{opacity:1;transform:translateY(0);}
+.rl{opacity:0;transform:translateX(-30px);transition:opacity .7s,transform .7s;}.rl.visible{opacity:1;transform:translateX(0);}
+.rr{opacity:0;transform:translateX(30px);transition:opacity .7s,transform .7s;}.rr.visible{opacity:1;transform:translateX(0);}
+.ey{font-family:'Space Mono',monospace;font-size:.72rem;color:var(--a);letter-spacing:4px;text-transform:uppercase;margin-bottom:12px;display:block;}
+.stit{font-size:clamp(1.8rem,4vw,3rem);font-weight:700;line-height:1.1;}
+.btn{padding:14px 32px;border-radius:100px;font-size:.9rem;font-weight:600;text-decoration:none;transition:all .3s;letter-spacing:.5px;display:inline-flex;align-items:center;gap:8px;}
+.bf{background:var(--a);color:#fff;box-shadow:0 0 24px rgba(233,69,96,.3);}.bf:hover{transform:translateY(-2px);box-shadow:0 0 40px rgba(233,69,96,.5);}
+.bo{border:1px solid var(--bd);color:var(--t);}.bo:hover{border-color:var(--a);color:var(--a);transform:translateY(-2px);}
+.bsm{padding:10px 22px;font-size:.82rem;}
+#about{max-width:1100px;margin:0 auto;padding:120px 24px;}
+.ai{display:grid;grid-template-columns:1fr 1.2fr;gap:48px;align-items:start;}
+.ab{color:var(--m);font-size:1rem;line-height:1.8;}.ab strong{color:var(--t);}
+.aq{border-left:3px solid var(--a);padding:20px 24px;background:rgba(233,69,96,.05);border-radius:0 12px 12px 0;margin-top:24px;font-size:1.05rem;font-style:italic;color:var(--t);}
+.bg{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+.bn{background:var(--card);border:1px solid var(--bd);border-radius:20px;padding:28px;transition:all .3s;}
+.bn:hover{transform:translateY(-4px);border-color:rgba(233,69,96,.3);}
+.bb{grid-column:span 2;}.bnn{font-size:3rem;font-weight:700;background:linear-gradient(135deg,var(--a),var(--a2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1;}
+.bla{color:var(--m);font-size:.85rem;margin-top:6px;}.bi{font-size:2.2rem;margin-bottom:12px;}
+.bt{font-weight:700;font-size:1rem;margin-bottom:6px;}.bs{color:var(--m);font-size:.82rem;line-height:1.6;}
+#skills{max-width:1100px;margin:0 auto;padding:120px 24px;}
+.skh{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:48px;flex-wrap:wrap;gap:20px;}
+.sts{display:flex;gap:8px;flex-wrap:wrap;}
+.tb{padding:8px 20px;border-radius:100px;border:1px solid var(--bd);background:transparent;color:var(--m);font-family:'Space Grotesk',sans-serif;font-size:.85rem;cursor:none;transition:all .3s;}
+.tb.active,.tb:hover{background:var(--a);border-color:var(--a);color:#fff;}
+.sp{display:none;}.sp.active{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;}
+.sc{background:var(--card);border:1px solid var(--bd);border-radius:16px;padding:22px 20px;transition:all .3s;position:relative;overflow:hidden;cursor:none;}
+.sc:hover{border-color:var(--a);transform:translateY(-4px);}
+.sc::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--a),var(--a2));transform:scaleX(0);transform-origin:left;transition:transform .4s;}
+.sc:hover::after{transform:scaleX(1);}
+.skt{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:14px;}
+.ske{font-size:1.8rem;}.skl{font-family:'Space Mono',monospace;font-size:.65rem;color:var(--a);background:rgba(233,69,96,.1);border:1px solid rgba(233,69,96,.2);padding:3px 8px;border-radius:100px;}
+.skn{font-weight:700;font-size:.95rem;margin-bottom:8px;}
+.skb{height:3px;background:rgba(255,255,255,.08);border-radius:2px;overflow:hidden;}
+.skf{height:100%;width:0%;background:linear-gradient(90deg,var(--a),var(--a2));border-radius:2px;transition:width 1.2s cubic-bezier(.4,0,.2,1);}
+/* PROJECTS */
+#projects,#dataviz,#mood,#contact{max-width:1100px;margin:0 auto;padding:120px 24px;}
+.isub{color:var(--m);font-size:1rem;line-height:1.8;max-width:640px;margin-top:14px;}
+.imr{display:flex;gap:28px;margin-top:20px;flex-wrap:wrap;}
+.imp{font-family:'Space Mono',monospace;font-size:.72rem;color:var(--m);display:flex;align-items:center;gap:6px;}
+.imp span{color:var(--a);font-weight:700;}
+.cnb{font-family:'Space Mono',monospace;font-size:.68rem;letter-spacing:2px;color:var(--a);background:rgba(233,69,96,.08);border:1px solid rgba(233,69,96,.22);padding:4px 10px;border-radius:4px;display:inline-block;text-transform:uppercase;}
+.sb{font-size:.67rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:4px 12px;border-radius:100px;border:1px solid;white-space:nowrap;}
+.sf{color:#f9a8d4;border-color:rgba(249,168,212,.3);background:rgba(249,168,212,.07);}
+.sd{color:#60a5fa;border-color:rgba(96,165,250,.3);background:rgba(96,165,250,.07);}
+.sn{color:#a78bfa;border-color:rgba(167,139,250,.3);background:rgba(167,139,250,.07);}
+.sdv{color:#34d399;border-color:rgba(52,211,153,.3);background:rgba(52,211,153,.07);}
+.sw{color:#fbbf24;border-color:rgba(251,191,36,.3);background:rgba(251,191,36,.08);}
+.sg{color:#6ee7b7;border-color:rgba(110,231,183,.3);background:rgba(110,231,183,.06);}
+.cf{background:var(--card);border:1px solid var(--bd);border-radius:24px;padding:44px;margin-bottom:20px;cursor:pointer;transition:all .35s;position:relative;overflow:hidden;}
+.cf:hover{border-color:rgba(233,69,96,.5);transform:translateY(-4px);box-shadow:0 20px 60px rgba(233,69,96,.1);}
+.cf::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(233,69,96,.06),rgba(124,58,237,.04),transparent);pointer-events:none;}
+.cft{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:14px;margin-bottom:20px;}
+.cfb,.cfa{display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
+.cftit{font-size:clamp(1.6rem,3vw,2.4rem);font-weight:700;margin-bottom:6px;}
+.cfsub{color:var(--m);font-size:.9rem;margin-bottom:16px;}
+.mys{font-style:italic;color:var(--t);font-size:.95rem;line-height:1.7;border-left:3px solid var(--a);padding:12px 18px;background:rgba(233,69,96,.04);border-radius:0 10px 10px 0;margin:16px 0 24px;}
+.evr{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px;}
+.ep{background:rgba(255,255,255,.04);border:1px solid var(--bd);border-radius:100px;padding:6px 14px;font-size:.8rem;display:flex;align-items:center;gap:6px;}
+.et{color:var(--a);font-size:.65rem;text-transform:uppercase;letter-spacing:1px;font-family:'Space Mono',monospace;}
+.csr{display:flex;flex-wrap:wrap;gap:8px;}
+.cht{background:rgba(124,58,237,.1);border:1px solid rgba(124,58,237,.2);color:#a78bfa;padding:5px 14px;border-radius:100px;font-size:.78rem;}
+.ob{display:inline-flex;align-items:center;gap:8px;color:var(--a);font-size:.85rem;font-weight:600;background:none;border:none;cursor:pointer;font-family:'Space Grotesk',sans-serif;padding:0;transition:gap .25s;margin-top:20px;}
+.ob:hover{gap:14px;}
+.cgr2{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;}
+.cc{background:var(--card);border:1px solid var(--bd);border-radius:20px;padding:28px;cursor:pointer;transition:all .3s;display:flex;flex-direction:column;gap:10px;position:relative;overflow:hidden;}
+.cc:hover{border-color:rgba(233,69,96,.4);transform:translateY(-5px);box-shadow:0 16px 40px rgba(233,69,96,.08);}
+.cc.cwin{border-color:rgba(251,191,36,.2)!important;}
+.cc.cwin:hover{border-color:rgba(251,191,36,.5)!important;box-shadow:0 16px 40px rgba(251,191,36,.12)!important;}
+/* ===== MUSIC CARD PREMIUM ===== */
+.cc-music{transition:all .4s cubic-bezier(.34,1.56,.64,1)!important;padding:0!important;gap:0!important;}
+.cc-music:hover{transform:translateY(-10px) scale(1.025)!important;border-color:rgba(167,139,250,.75)!important;box-shadow:0 28px 70px rgba(167,139,250,.28),0 0 50px rgba(233,69,96,.18),inset 0 0 40px rgba(124,58,237,.05)!important;}
+.cc-music::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,#e94560,#7c3aed,#a78bfa);z-index:2;}
+.cc-music-body{padding:22px 28px 24px;display:flex;flex-direction:column;gap:10px;}
+.mu-prev{background:linear-gradient(145deg,#0b0818,#110c22,#0d0a1e);border-radius:18px 18px 0 0;padding:16px 18px 14px;position:relative;overflow:hidden;min-height:148px;border-bottom:1px solid rgba(167,139,250,.15);}
+.mu-prev::before{content:'';position:absolute;top:-30px;right:-30px;width:110px;height:110px;background:radial-gradient(circle,rgba(233,69,96,.4),transparent 68%);border-radius:50%;pointer-events:none;}
+.mu-prev::after{content:'';position:absolute;bottom:-25px;left:-25px;width:90px;height:90px;background:radial-gradient(circle,rgba(124,58,237,.35),transparent 68%);border-radius:50%;pointer-events:none;}
+.mu-topbar{display:flex;align-items:center;justify-content:space-between;margin-bottom:11px;position:relative;z-index:1;}
+.mu-title{font-family:'Space Mono',monospace;font-size:.56rem;color:rgba(167,139,250,.8);letter-spacing:2px;text-transform:uppercase;display:flex;align-items:center;gap:5px;}
+.mu-title::before{content:'🎵';font-size:.75rem;}
+.mu-dot{width:6px;height:6px;border-radius:50%;background:#4ade80;box-shadow:0 0 6px #4ade80;animation:blink 2s infinite;}
+.mu-conv{display:flex;flex-direction:column;gap:7px;position:relative;z-index:1;}
+.mu-q{font-size:.69rem;color:rgba(255,255,255,.52);padding:6px 10px;background:rgba(255,255,255,.06);border-radius:10px 10px 2px 10px;align-self:flex-end;max-width:80%;font-style:italic;border:1px solid rgba(255,255,255,.08);}
+.mu-a{font-size:.69rem;color:#ddd4ff;padding:7px 11px;background:rgba(167,139,250,.13);border:1px solid rgba(167,139,250,.28);border-radius:10px 10px 10px 2px;align-self:flex-start;max-width:86%;}
+.mu-a strong{color:#c4b5fd;font-size:.72rem;}
+.mu-score{font-size:.58rem;color:rgba(74,222,128,.85);display:block;margin-top:3px;font-family:'Space Mono',monospace;}
+.mu-inp{display:flex;align-items:center;gap:7px;background:rgba(255,255,255,.05);border:1px solid rgba(167,139,250,.18);border-radius:8px;padding:7px 12px;font-family:'Space Mono',monospace;font-size:.59rem;color:rgba(255,255,255,.28);margin-top:10px;position:relative;z-index:1;}
+.mu-inp::before{content:'♪';color:rgba(167,139,250,.55);font-size:.85rem;}
+/* ===== END MUSIC CARD ===== */.cc.cwin::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,#fbbf24,#f59e0b);}
+.cct{display:flex;justify-content:space-between;align-items:flex-start;}
+.ccti{font-size:1.1rem;font-weight:700;margin-top:8px;}
+.ccm{color:var(--m);font-size:.84rem;line-height:1.6;font-style:italic;flex:1;}
+.ccto{display:flex;flex-wrap:wrap;gap:5px;margin-top:auto;}
+.cctag{font-size:.7rem;padding:3px 10px;border:1px solid var(--bd);border-radius:100px;color:var(--m);}
+.cob{display:inline-flex;align-items:center;gap:8px;color:var(--a);font-size:.82rem;font-weight:600;background:none;border:none;cursor:pointer;font-family:'Space Grotesk',sans-serif;padding:0;transition:gap .25s;}
+.cob:hover{gap:12px;}
+.cres{display:flex;gap:10px;flex-wrap:wrap;margin-top:4px;}
+.cr{background:rgba(255,255,255,.04);border:1px solid var(--bd);border-radius:8px;padding:6px 12px;font-size:.75rem;display:flex;align-items:center;gap:6px;}
+.cr .cri{color:var(--a);}
+/* DATAVIZ */
+.inv-wrap{border-radius:28px;overflow:hidden;border:1px solid rgba(233,69,96,.35);background:#05050f;box-shadow:0 0 80px rgba(233,69,96,.07);}
+.inv-hd{padding:36px 40px 28px;background:linear-gradient(135deg,rgba(233,69,96,.1),rgba(124,58,237,.07));border-bottom:1px solid rgba(233,69,96,.18);}
+.inv-hdtop{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:14px;margin-bottom:16px;}
+.inv-banner{display:inline-flex;align-items:center;gap:8px;background:rgba(233,69,96,.12);border:1px solid rgba(233,69,96,.3);border-radius:6px;padding:6px 14px;font-family:'Space Mono',monospace;font-size:.65rem;color:var(--a);letter-spacing:2px;text-transform:uppercase;margin-bottom:10px;}
+.inv-qs{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;padding:24px 40px;border-bottom:1px solid rgba(233,69,96,.12);}
+.inv-q{background:rgba(233,69,96,.04);border:1px solid rgba(233,69,96,.14);border-radius:14px;padding:18px;transition:border-color .3s;}
+.inv-q:hover{border-color:rgba(233,69,96,.3);}
+.inv-qn{font-family:'Space Mono',monospace;font-size:.62rem;color:var(--a);letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;}
+.inv-q p{color:var(--m);font-size:.85rem;line-height:1.5;font-style:italic;}
+.inv-bd .tableauPlaceholder{animation:dbz 1.4s cubic-bezier(.4,0,.2,1) forwards;}
+@keyframes dbz{from{transform:scale(.93);opacity:.3}to{transform:scale(1);opacity:1}}
+.inv-foot{padding:28px 40px;background:linear-gradient(135deg,rgba(124,58,237,.05),rgba(233,69,96,.04));border-top:1px solid rgba(233,69,96,.12);}
+.inv-conc{color:var(--m);font-size:.9rem;line-height:1.8;margin-bottom:16px;}
+.inv-conc strong{color:var(--t);}
+.inv-tags{display:flex;gap:8px;flex-wrap:wrap;}
+.inv-tag{font-size:.75rem;color:var(--m);background:rgba(255,255,255,.04);border:1px solid var(--bd);padding:4px 12px;border-radius:100px;}
+/* MOOD */
+.mw{border-radius:28px;background:var(--card);border:1px solid var(--bd);overflow:hidden;}
+.mch{padding:44px 48px 32px;background:linear-gradient(135deg,rgba(124,58,237,.07),rgba(233,69,96,.05));border-bottom:1px solid var(--bd);}
+.mcht{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:14px;margin-bottom:12px;}
+.mcti{font-size:1.6rem;font-weight:700;margin-top:8px;margin-bottom:8px;}
+.mcd{color:var(--m);font-size:.93rem;line-height:1.7;}
+.mi{padding:36px 48px;}.mi h4{font-size:.78rem;font-family:'Space Mono',monospace;color:var(--a);letter-spacing:3px;text-transform:uppercase;margin-bottom:20px;}
+.mb2{display:flex;flex-wrap:wrap;gap:10px;}
+.mp{background:rgba(255,255,255,.04);border:1px solid var(--bd);color:var(--t);padding:12px 24px;border-radius:100px;cursor:pointer;font-size:.9rem;font-family:'Space Grotesk',sans-serif;transition:all .3s;}
+.mp:hover,.mp.active{background:var(--a);border-color:var(--a);transform:translateY(-3px);box-shadow:0 10px 28px rgba(233,69,96,.3);}
+.mr{padding:0 48px 48px;display:none;}.mr.show{display:block;}
+.mrl{font-size:.72rem;font-family:'Space Mono',monospace;color:var(--a);letter-spacing:3px;text-transform:uppercase;margin-bottom:16px;margin-top:28px;}
+.fg{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
+.fc{background:rgba(255,255,255,.03);border:1px solid var(--bd);border-radius:16px;padding:20px 16px;text-align:center;transition:all .3s;}
+.fc:hover{border-color:var(--a);transform:translateY(-4px);}
+.fp3{font-size:3rem;margin-bottom:10px;}.fti{font-weight:700;font-size:.88rem;}.fy{color:var(--m);font-size:.75rem;}
+/* CONTACT */
+.cta2{text-align:center;margin-bottom:60px;}
+.cta2 h2{font-size:clamp(2rem,5vw,4rem);font-weight:700;line-height:1.1;margin-bottom:16px;}
+.cta2 h2 span{background:linear-gradient(135deg,var(--a),var(--a2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.cta2 p{color:var(--m);font-size:1.05rem;max-width:500px;margin:0 auto 32px;}
+.ccs{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
+.ccard{display:flex;flex-direction:column;align-items:center;gap:12px;padding:28px 20px;border-radius:20px;border:1px solid var(--bd);text-decoration:none;color:var(--t);background:var(--card);transition:all .3s;text-align:center;}
+.ccard:hover{transform:translateY(-6px);border-color:var(--a);box-shadow:0 20px 40px rgba(233,69,96,.15);}
+.ci{width:56px;height:56px;border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:1.6rem;}
+.cn{font-weight:700;font-size:.95rem;}.csub{color:var(--m);font-size:.78rem;}
+footer{text-align:center;padding:40px 24px;color:var(--m);font-size:.82rem;border-top:1px solid var(--bd);}
+/* MODALS */
+.mo{position:fixed;inset:0;background:rgba(0,0,0,.9);z-index:5000;display:none;align-items:flex-start;justify-content:center;padding:32px 16px;backdrop-filter:blur(14px);overflow-y:auto;}
+.mo.open{display:flex;}
+.mb3{background:#08081e;border:1px solid rgba(233,69,96,.22);border-radius:28px;max-width:680px;width:100%;padding:44px;position:relative;animation:mi .35s cubic-bezier(.34,1.56,.64,1);margin:auto;}
+@keyframes mi{from{opacity:0;transform:scale(.92) translateY(24px)}to{opacity:1;transform:scale(1) translateY(0)}}
+.mc2{position:absolute;top:16px;right:16px;width:34px;height:34px;border-radius:50%;border:1px solid var(--bd);background:none;color:var(--m);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .3s;}
+.mc2:hover{border-color:var(--a);color:var(--a);}
+.mcn{font-family:'Space Mono',monospace;font-size:.7rem;color:var(--a);letter-spacing:3px;text-transform:uppercase;margin-bottom:6px;}
+.mt2{font-size:1.9rem;font-weight:700;margin-bottom:8px;}
+.mbg{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:20px;}
+.mmy{font-style:italic;border-left:3px solid var(--a);padding:12px 16px;background:rgba(233,69,96,.05);border-radius:0 10px 10px 0;color:var(--t);line-height:1.7;font-size:.92rem;}
+.ms{margin-top:20px;padding-top:20px;border-top:1px solid var(--bd);}
+.msl{display:inline-flex;align-items:center;gap:8px;font-family:'Space Mono',monospace;font-size:.65rem;color:var(--a);letter-spacing:2px;text-transform:uppercase;background:rgba(233,69,96,.07);border:1px solid rgba(233,69,96,.15);padding:4px 12px;border-radius:100px;margin-bottom:12px;}
+.mli{list-style:none;}.mli li{display:block;gap:10px;color:var(--m);font-size:.9rem;line-height:1.7;margin-bottom:4px;}
+.mli li::before{content:'▸';color:var(--a);flex-shrink:0;}
+.mvd{background:rgba(74,222,128,.05);border:1px solid rgba(74,222,128,.15);border-radius:14px;padding:16px 20px;color:var(--t);line-height:1.7;font-size:.9rem;}
+.mst{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px;}
+.mtag{background:rgba(124,58,237,.1);border:1px solid rgba(124,58,237,.2);color:#a78bfa;padding:5px 14px;border-radius:100px;font-size:.78rem;}
+.mln{display:flex;gap:12px;margin-top:20px;flex-wrap:wrap;}
+.pgal{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-top:16px;}
+.pgal img{width:100%;height:110px;object-fit:cover;border-radius:8px;border:1px solid var(--bd);}
+.mwin{background:rgba(251,191,36,.07);border:1px solid rgba(251,191,36,.2);border-radius:14px;padding:16px 20px;display:flex;gap:12px;font-size:.9rem;line-height:1.7;margin-top:16px;}
+/* CHATBOT */
+#cbtn{position:fixed;bottom:32px;right:32px;z-index:1000;width:72px;height:72px;border-radius:50%;border:2px solid var(--a);background:var(--bg);box-shadow:0 0 30px rgba(233,69,96,.4);cursor:none;padding:0;transition:transform .3s;overflow:hidden;}
+#cbtn:hover{transform:scale(1.1);}
+#cbtn img,
+.cav img,
+.mav2 img {
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:50% 32%;
+  margin:0;
+  display:block;
+}.cpulse{position:fixed;bottom:32px;right:32px;z-index:999;width:72px;height:72px;border-radius:50%;border:2px solid var(--a);animation:pr 2s ease-out infinite;pointer-events:none;}
+@keyframes pr{0%{transform:scale(1);opacity:.6}100%{transform:scale(1.7);opacity:0}}
+.ctt{position:fixed;bottom:118px;right:32px;background:var(--card);border:1px solid var(--bd);border-radius:14px 14px 4px 14px;padding:12px 16px;font-size:.85rem;white-space:nowrap;backdrop-filter:blur(12px);animation:fu .5s 5.5s both;z-index:999;}
+#cw{position:fixed;bottom:120px;right:32px;width:360px;max-height:520px;background:#0d0d1f;border:1px solid var(--bd);border-radius:24px;display:flex;flex-direction:column;z-index:1001;box-shadow:0 24px 60px rgba(0,0,0,.6);overflow:hidden;transform:scale(.8) translateY(20px);transform-origin:bottom right;opacity:0;pointer-events:none;transition:all .3s cubic-bezier(.34,1.56,.64,1);}
+#cw.open{transform:scale(1) translateY(0);opacity:1;pointer-events:all;}
+.chdr{display:flex;align-items:center;gap:12px;padding:18px 20px;background:rgba(233,69,96,.08);border-bottom:1px solid var(--bd);}
+.cav{width:46px;height:46px;border-radius:50%;border:2px solid var(--a);overflow:hidden;flex-shrink:0;background:var(--bg);}
+#cbtn img,
+.cav img,
+.mav2 img {
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:50% 32%;
+  margin:0;
+  display:block;
+}.chi .name{font-weight:700;font-size:.95rem;}.chi .st{font-size:.75rem;color:#4ade80;display:flex;align-items:center;gap:4px;}
+.chi .st::before{content:'';width:6px;height:6px;background:#4ade80;border-radius:50%;animation:blink 2s infinite;}
+.ccl{margin-left:auto;background:none;border:none;color:var(--m);font-size:1.2rem;cursor:none;}.ccl:hover{color:var(--a);}
+.cm{flex:1;overflow-y:auto;padding:20px;display:flex;flex-direction:column;gap:14px;scrollbar-width:thin;}
+.msg{display:flex;gap:10px;align-items:flex-end;animation:fu .3s;}.msg.user{flex-direction:row-reverse;}
+.mav2{width:30px;height:30px;border-radius:50%;overflow:hidden;flex-shrink:0;background:var(--bg);border:1px solid var(--bd);}
+.mui{width:30px;height:30px;border-radius:50%;background:var(--a);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:700;color:#fff;}
+.bbl{max-width:240px;padding:11px 15px;border-radius:18px;font-size:.88rem;line-height:1.5;}
+.msg.bot .bbl{background:rgba(255,255,255,.06);border:1px solid var(--bd);border-bottom-left-radius:4px;}
+.msg.user .bbl{background:var(--a);color:#fff;border-bottom-right-radius:4px;}
+.tyd span{display:inline-block;width:6px;height:6px;background:var(--m);border-radius:50%;animation:dot 1.4s infinite both;margin:0 2px;}
+.tyd span:nth-child(2){animation-delay:.2s}.tyd span:nth-child(3){animation-delay:.4s}
+@keyframes dot{0%,80%,100%{transform:scale(.6)}40%{transform:scale(1)}}
+.csg{display:flex;flex-wrap:wrap;gap:6px;padding:0 20px 12px;}
+.sug{background:rgba(233,69,96,.1);border:1px solid rgba(233,69,96,.2);color:var(--a);padding:5px 12px;border-radius:100px;font-size:.75rem;cursor:none;font-family:'Space Grotesk',sans-serif;transition:all .2s;}
+.sug:hover{background:var(--a);color:#fff;}
+.cir{display:flex;gap:10px;padding:14px 16px;border-top:1px solid var(--bd);}
+.cinp{flex:1;background:rgba(255,255,255,.06);border:1px solid var(--bd);border-radius:100px;color:var(--t);padding:10px 16px;font-family:'Space Grotesk',sans-serif;font-size:.85rem;outline:none;}
+.cinp:focus{border-color:var(--a);}
+.csnd{width:40px;height:40px;border-radius:50%;background:var(--a);border:none;color:#fff;cursor:none;display:flex;align-items:center;justify-content:center;}
+@media(max-width:900px){
+  .snav{padding:12px 20px;}.hcenter{padding:70px 16px 50px;}.hnotes{gap:10px;}.hnote{min-width:70px;padding:16px 10px 12px;}.ntxt{font-size:.62rem;}.ndesc{display:none;}
+  .ai{grid-template-columns:1fr;}.bg{grid-template-columns:1fr 1fr;}.bb{grid-column:span 2;}
+  .cgr2{grid-template-columns:1fr;}.ccs{grid-template-columns:1fr 1fr;}.fg{grid-template-columns:repeat(2,1fr);}
+  .inv-qs{grid-template-columns:1fr;padding:16px 20px;}.inv-hd,.inv-foot{padding:20px 20px;}
+  .cf{padding:24px;}.cc{padding:20px;}.mb3{padding:24px;}
+  #cw{width:calc(100vw - 32px);right:16px;bottom:100px;}#cbtn,.cpulse{bottom:20px;right:20px;}
+  .mi,.mch{padding:24px;}.mr{padding:0 24px 24px;}.fw{grid-template-columns:repeat(4,1fr);}
+}#loader,
+#loader *{
+  cursor:auto !important;
+}
+/* === CASE #04 SCHOOL CARD === */
+.cc-school:hover{border-color:rgba(110,231,183,.5)!important;box-shadow:0 20px 50px rgba(110,231,183,.1)!important;}
+.cc-school::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,#6ee7b7,#34d399);}
+
+/* === TABLEAU ENHANCED === */
+.inv-wrap{border-radius:28px;overflow:hidden;border:1px solid rgba(233,69,96,.3);background:#05050f;box-shadow:0 0 0 1px rgba(124,58,237,.15),0 0 80px rgba(233,69,96,.08),0 0 120px rgba(124,58,237,.06);}
+@keyframes revealDash{from{opacity:0;transform:scale(.94) translateY(16px)}to{opacity:1;transform:scale(1) translateY(0)}}
+.inv-wrap.visible{animation:revealDash .9s cubic-bezier(.4,0,.2,1) forwards;}
+.inv-bd{position:relative;}
+.inv-bd::before{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(5,5,15,.9) 0%,transparent 8%,transparent 92%,rgba(5,5,15,.9) 100%);pointer-events:none;z-index:1;}
+.inv-bd::after{content:'';position:absolute;inset:0;border:1px solid rgba(167,139,250,.08);pointer-events:none;z-index:1;}
+@keyframes dbz{from{transform:scale(.93);opacity:.3}to{transform:scale(1);opacity:1}}
+.inv-bd .tableauPlaceholder{animation:dbz 1.4s cubic-bezier(.4,0,.2,1) forwards;}
+
+/* === PROOF BADGE === */
+.proof-badge{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,rgba(233,69,96,.14),rgba(124,58,237,.1));border:1px solid rgba(233,69,96,.3);border-radius:8px;padding:8px 16px;font-family:'Space Mono',monospace;font-size:.65rem;color:var(--a);letter-spacing:2px;text-transform:uppercase;margin-bottom:14px;}
+.inv-q-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;padding:24px 40px;border-bottom:1px solid rgba(233,69,96,.12);}
+.inv-q{background:rgba(233,69,96,.04);border:1px solid rgba(233,69,96,.14);border-radius:14px;padding:18px;transition:all .3s;cursor:default;}
+.inv-q:hover{border-color:rgba(233,69,96,.35);transform:translateY(-3px);box-shadow:0 10px 30px rgba(233,69,96,.07);}
+.inv-qnum{font-family:'Space Mono',monospace;font-size:.62rem;color:var(--a);letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;}
+.inv-q p{color:var(--m);font-size:.85rem;line-height:1.5;font-style:italic;}
+
+/* === CASE IMAGES GALLERY === */
+.case-gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin:16px 0;border-radius:12px;overflow:hidden;border:1px solid var(--bd);}
+.case-gallery img{
+  width:100%;
+  height:180px;
+  object-fit:cover;
+  display:block;
+  border-radius:10px;
+  transition:transform .4s;
+}.case-gallery img:hover{transform:scale(1.04);}
+
+/* === VERDICT BLOCK === */
+.verdict-block{background:linear-gradient(135deg,rgba(74,222,128,.06),rgba(52,211,153,.04));border:1px solid rgba(74,222,128,.18);border-radius:16px;padding:20px 24px;margin-top:16px;}
+.verdict-label{font-family:'Space Mono',monospace;font-size:.62rem;color:#4ade80;letter-spacing:2px;text-transform:uppercase;margin-bottom:10px;display:flex;align-items:center;gap:6px;}
+.verdict-block p{color:var(--t);font-size:.92rem;line-height:1.7;}
+.verdict-block strong{color:#6ee7b7;}
+
+@media(max-width:900px){
+  .inv-q-grid{grid-template-columns:1fr;padding:16px 20px;}
+}
+.together-preview-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:12px;
+  margin:20px 0;
+}
+
+.together-preview-grid img{
+  width:100%;
+  height:180px;
+  object-fit:cover;
+  object-position:center top; /* 👈 ajuste ici */
+  border-radius:12px;
+  border:1px solid rgba(255,255,255,0.08);
+  transition:all .3s ease;
+}
+
+/* effet hover 🔥 */
+.together-preview-grid img:hover{
+  transform:scale(1.05);
+  box-shadow:0 10px 30px rgba(233,69,96,0.2);
+}
+@media(max-width:900px){
+  .together-preview-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+.hackathon-image{
+  margin:20px 0;
+  border-radius:16px;
+  overflow:hidden;
+  border:1px solid rgba(251,191,36,0.3);
+  box-shadow:0 0 40px rgba(251,191,36,0.2);
+  position:relative;
+  background:#05050f;
+  padding:14px;
+}
+
+.hackathon-image img{
+  width:100%;
+  height:auto;
+  max-height:420px;
+  object-fit:contain;
+  display:block;
+  border-radius:12px;
+}
+</style></head>
+<body>
+<div id="cursor"></div><div id="cf"></div>
+<div id="loader">
+  <div class="fw" id="fw"></div><div class="lo"></div>
+  <div class="lc">
+    <div class="ll">DOSSIER #EK</div><div class="lfile">CLASSIFICATION : TOP SECRET</div>
+    <div class="lseq"><span id="lt">Ouverture du dossier…</span></div>
+    <div class="lbw"><div class="lbf" id="lbf"></div></div>
+    <div class="ldots"><span></span><span></span><span></span></div>
+    <button class="ebtn" id="ebtn" onclick="hideLoader()"><span>✦ ACCÉDER AU SYSTÈME ✦</span></button>
+  </div>
+</div>
+<nav class="snav" id="snav">
+  <a href="#hero" class="snl">EK.</a>
+  <ul><li><a href="#about">Moi</a></li><li><a href="#skills">Stack</a></li><li><a href="#projects">Enquêtes</a></li><li><a href="#dataviz">Dataviz</a></li><li><a href="#mood">Mood</a></li><li><a href="#contact">Contact</a></li></ul>
+</nav>
+<canvas id="bgc"></canvas>
+<div class="wrap">
+<div id="hero">
+  <div class="hbg"></div><div class="hdetbg"></div><div class="hdark"></div>
+  <div class="hcenter">
+    <p class="hbadge">✦ DOSSIER OUVERT · ACCÈS AUTORISÉ</p>
+    <h1 class="hname">Elena Kervennic</h1>
+    <p class="htyp"><span id="typed"></span><span class="htc">|</span></p>
+    <div class="hnotes">
+      <a href="#about" class="hnote" style="background:#fef9e7;color:#3d2b00;transform:rotate(-4deg)"><div class="npin" style="background:#c0392b"></div><span class="ncode">Dossier 01</span><span class="ntxt">MOI</span><span class="ndesc">Profil</span></a>
+      <a href="#skills" class="hnote" style="background:#eaf4fb;color:#0a2a40;transform:rotate(2.5deg)"><div class="npin" style="background:#2980b9"></div><span class="ncode">Dossier 02</span><span class="ntxt">STACK</span><span class="ndesc">Skills</span></a>
+      <a href="#projects" class="hnote" style="background:#fdf2f8;color:#3a0a20;transform:rotate(-2.5deg)"><div class="npin" style="background:#8e44ad"></div><span class="ncode">Dossier 03</span><span class="ntxt">ENQUÊTES</span><span class="ndesc">Projets</span></a>
+      <a href="#dataviz" class="hnote" style="background:#eafaf1;color:#0a2a15;transform:rotate(3deg)"><div class="npin" style="background:#27ae60"></div><span class="ncode">Dossier 04</span><span class="ntxt">DATAVIZ</span><span class="ndesc">Dashboard</span></a>
+      <a href="#contact" class="hnote" style="background:#fef5eb;color:#3a1a00;transform:rotate(2deg)"><div class="npin" style="background:#e67e22"></div><span class="ncode">Dossier 06</span><span class="ntxt">CONTACT</span><span class="ndesc">Me contacter</span></a>
+    </div>
+    <div class="hcta"><a href="#projects" class="btn bf">🔍 Voir mes enquêtes</a><a href="#contact" class="btn bo">Me contacter</a></div>
+  </div>
+  <div class="hscroll"><div class="hsl"></div>scroll</div>
+</div>
+<div class="tw"><div class="tk" id="ticker"></div></div>
+<section id="about"><div class="ai">
+  <div class="rl"><span class="ey">✦ À propos</span><h2 class="stit" style="margin-bottom:24px">La data,<br>l'IA & moi</h2><div class="ab"><p>
+Je suis <strong>Elena Kervennic</strong>, étudiante en data et intelligence artificielle, passionnée par la manière dont les données peuvent révéler des insights et résoudre des problèmes concrets.
+
+Je développe mes compétences en analyse de données, en automatisation et en IA à travers des projets pratiques, allant du scraping à la création d’agents LLM.
+
+En parallèle, je réalise mon alternance à la <strong>FDJ</strong>, au sein du service data, où je travaille sur la collecte, l’analyse et la valorisation de données pour accompagner la prise de décision.
+</p><div class="aq">"Je ne code pas pour coder. Je construis des choses qui résolvent de vrais problèmes."</div></div></div>
+  <div class="bg rr"><div class="bn bb"><div class="bi">🚀</div><div class="bt">Together — App sociale</div><div class="bs">Vibe coding · Next.js · Supabase · IA</div></div><div class="bn"><div class="bnn">6500+</div><div class="bla">Titres scrappés</div></div><div class="bn"><div class="bnn">🏆</div><div class="bla">Hackathon Mirakl</div></div><div class="bn"><div class="bnn">6</div><div class="bla">Enquêtes</div></div><div class="bn bb"><div class="bi">🤖</div><div class="bt">Agents LLM & Automatisation</div><div class="bs">Dust · Make · Airtable · RAG</div></div></div>
+</div></section>
+<section id="skills"><div class="skh reveal"><div><span class="ey">✦ Compétences</span><h2 class="stit">Mon stack</h2></div><div class="sts"><button class="tb active" onclick="switchTab('dev',event)">Data & Dev</button><button class="tb" onclick="switchTab('auto',event)">IA & Auto</button><button class="tb" onclick="switchTab('mkt',event)">Marketing</button></div></div><div class="sp active" id="tab-dev"></div><div class="sp" id="tab-auto"></div><div class="sp" id="tab-mkt"></div></section>
+
+<!-- ===== ENQUÊTES ===== -->
+<!-- ===== ENQUÊTES ===== -->
+<section id="projects">
+
+<div class="reveal" style="margin-bottom:56px">
+  <span class="ey">🔍 Dossiers d'enquête</span>
+  <h2 class="stit">Le Labo d'Investigation</h2>
+  <p class="isub">Chaque projet naît d'un vrai problème, d'une hypothèse à vérifier, et d'une enquête menée avec la data, l'IA ou le code.</p>
+  <div class="imr">
+    <div class="imp"><span>6</span> dossiers résolus</div>
+    <div class="imp"><span>1</span> hackathon remporté 🏆</div>
+  </div>
+</div>
+
+<!-- ── CASE #01 — Together (large featured) ────────────────── -->
+<div class="cf reveal" onclick="openModal('c01')">
+  <div class="cft">
+    <div class="cfb">
+      <span class="cnb">Case #01</span>
+      <span class="sb sf">⭐ Projet phare</span>
+      <span class="sb" style="color:#f9a8d4;border-color:rgba(249,168,212,.3);background:rgba(249,168,212,.07)">📱 Produit</span>
+    </div>
+    <div class="cfa">
+      <a href="https://github.com/alexishonnorat/Together" class="btn bf bsm" target="_blank" onclick="event.stopPropagation()">💻 GitHub</a>
+      <button class="btn bo bsm" onclick="event.stopPropagation();openModal('c01')">🔍 Ouvrir</button>
+    </div>
+  </div>
+  <div class="cftit">Together</div>
+<div class="together-preview-grid">
+  <img src="https://raw.githubusercontent.com/ekervennic/Portefolio/main/social-un.png">
+  <img src="https://raw.githubusercontent.com/ekervennic/Portefolio/main/social-deux.png">
+  <img src="https://raw.githubusercontent.com/ekervennic/Portefolio/main/social-trois.png">
+  <img src="https://raw.githubusercontent.com/ekervennic/Portefolio/main/social-quatre.png">
+</div>
+  <div class="cfsub">Application sociale de sorties · Vibe Coding avec Cursor</div>
+  <div class="mys">"Comment créer une application sociale qui simplifie réellement l'organisation de sorties entre amis ?"</div>
+  <div class="evr">
+    <div class="ep"><span class="et">Feature</span>Chat temps réel</div>
+    <div class="ep"><span class="et">Feature</span>Votes & RSVP</div>
+    <div class="ep"><span class="et">Feature</span>Carte interactive</div>
+    <div class="ep"><span class="et">IA</span>Suggestions de lieux</div>
+    <div class="ep"><span class="et">Social</span>Feed & Stories</div>
+  </div>
+  <div class="csr">
+    <span class="cht">Next.js</span><span class="cht">TypeScript</span><span class="cht">Supabase</span>
+    <span class="cht">OpenAI</span><span class="cht">Tailwind</span><span class="cht">Cursor</span><span class="cht">Vercel</span>
+  </div>
+  <button class="ob">Ouvrir le dossier →</button>
+</div>
+
+<!-- ── GRILLE 2×2 : Cases #02 → #05 ───────────────────────── -->
+<div class="cgr2 reveal">
+
+  <!-- CASE #02 — Mood Film Finder -->
+  <div class="cc" onclick="openModal('c02')">
+    <div class="cct">
+      <span class="cnb">Case #02</span>
+      <span class="sb sd">🎬 Data · IA</span>
+    </div>
+    <div class="ccti">Mood Film Finder</div>
+  <div class="case-gallery">
+    <img src="https://raw.githubusercontent.com/ekervennic/Portefolio/main/python-un.png">
+    <img src="https://raw.githubusercontent.com/ekervennic/Portefolio/main/python-deux.png">
+  </div>
+    <div class="ccm">"Peut-on recommander un film selon l'humeur plutôt qu'un genre ?"</div>
+    <p style="margin-top:12px;font-size:.9rem;color:var(--m);line-height:1.6;">
+  🔍 Envie de vérifier l’hypothèse par vous-même ? Testez directement le moteur de recommandation :
+  <a href="https://vibe-select-recs.lovable.app/match" target="_blank"
+     style="color:#e94560;font-weight:600;text-decoration:none;">
+    Lancer l’expérience →
+  </a>
+</p>
+    <div class="cres">
+      <div class="cr"><span class="cri">📦</span>6 500+ films scrapés</div>
+      <div class="cr"><span class="cri">🧠</span>RAG + vectorisation</div>
+    </div>
+    <div class="ccto">
+      <span class="cctag">Python</span><span class="cctag">Scraping</span>
+      <span class="cctag">RAG</span><span class="cctag">IA</span>
+    </div>
+    <button class="cob">Ouvrir le dossier →</button>
+  </div>
+
+  <!-- CASE #03 — Chatbot Paroles (premium avec preview) -->
+  <div class="cc cc-music" onclick="openModal('c03')">
+    <div class="mu-prev">
+      <div class="mu-topbar">
+        <div class="mu-title">Musixmatch · RAG Lyrics</div>
+        <div class="mu-dot"></div>
+      </div>
+      <div class="mu-conv">
+        <div class="mu-q">« les filles de mon pays ont les yeux… »</div>
+        <div class="mu-a">
+          <strong>🎵 Joe Dassin — Les Champs-Élysées</strong>
+          <span class="mu-score">✓ Similarité vectorielle : 96%</span>
+        </div>
+      </div>
+      <div class="mu-inp">Tape tes paroles ici…</div>
+    </div>
+    <div class="cc-music-body">
+      <div class="cct"><span class="cnb">Case #03</span><span class="sb sn">🎵 IA · NLP</span></div>
+      <div class="ccti">Chatbot Paroles</div>
+      <div class="ccm">"Un agent identifie n'importe quel titre depuis un extrait flou de paroles."</div>
+      <div class="cres">
+        <div class="cr"><span class="cri">🎵</span>1 872 chansons</div>
+        <div class="cr"><span class="cri">🧠</span>FAISS + Embeddings</div>
+      </div>
+      <div class="ccto">
+        <span class="cctag">Python</span><span class="cctag">Flask</span>
+        <span class="cctag">OpenAI</span><span class="cctag">FAISS</span><span class="cctag">RAG</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:10px;margin-top:6px;flex-wrap:wrap;">
+        <a href="https://github.com/arquam-elglaoui/Project-AI" class="btn bf bsm" target="_blank"
+           onclick="event.stopPropagation()" style="font-size:.75rem;padding:8px 16px;">💻 GitHub</a>
+        <button class="cob" style="margin-top:0">Ouvrir le dossier →</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- CASE #04 — Plateforme Scolaire -->
+  <div class="cc cc-school" onclick="openModal('c04')">
+    <div class="cct">
+      <span class="cnb">Case #04</span>
+      <span class="sb sg">🎓 Produit · Interface</span>
+    </div>
+    <div class="ccti">Plateforme Scolaire</div>
+    <div class="ccm">"Comment centraliser tous les outils utiles aux étudiants dans une seule interface ?"</div>
+    <div class="cres">
+      <div class="cr"><span class="cri">💬</span>Messagerie prof/élève</div>
+      <div class="cr"><span class="cri">📅</span>Agenda & quiz</div>
+    </div>
+    <div class="ccto">
+      <span class="cctag">Dashboard</span><span class="cctag">Messagerie</span>
+      <span class="cctag">Quiz</span><span class="cctag">Events</span>
+    </div>
+    <button class="cob">Ouvrir le dossier →</button>
+  </div>
+
+  <!-- CASE #05 — Hackathon Mirakl -->
+  <div class="cc cwin" onclick="openModal('c05')">
+    <div class="cct">
+      <span class="cnb">Case #05</span>
+      <span class="sb sw">🏆 Hackathon Winner</span>
+    </div>
+    <div class="ccti">Hackathon Mirakl</div>
+    <div class="ccm">"Comment automatiser la recherche de candidats à partir d'une offre d'emploi ?"</div>
+    <div class="cres">
+      <div class="cr"><span class="cri">🔎</span>Scraping LinkedIn & GitHub</div>
+      <div class="cr"><span class="cri">⚡</span>Sourcing automatisé</div>
+    </div>
+    <div class="ccto">
+      <span class="cctag">Python</span><span class="cctag">Scraping</span><span class="cctag">IA</span>
+    </div>
+    <button class="cob">Ouvrir le dossier →</button>
+  </div>
+
+</div>
+</section>
+
+<!-- DATAVIZ — CASE #06 -->
+<!-- ── CASE #06 — Analyse E-commerce Brésil (Dataviz) ─────── -->
+<section id="dataviz">
+  <div class="reveal" style="margin-bottom:40px">
+    <span class="ey">🔍 Dossier d'enquête</span>
+    <h2 class="stit">Case #06 — Analyse E-commerce Brésil</h2>
+    <p style="color:var(--m);font-size:1rem;line-height:1.8;max-width:640px;margin-top:14px">
+      "Que révèle le marché e-commerce brésilien sur les comportements d'achat et les performances logistiques ?"
+    </p>
+  </div>
+
+  <div class="inv-wrap reveal">
+    <!-- En-tête dossier -->
+    <div class="inv-hd">
+      <div class="inv-hdtop">
+        <div>
+          <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:12px">
+            <span class="cnb">Case #06</span>
+            <span class="sb sdv">📊 Data Analyse</span>
+            <span class="sb sn">DataViz</span>
+          </div>
+          <div class="proof-badge">🗂️ Preuve visuelle — Analyse du marché e-commerce brésilien</div>
+          <h3 style="font-size:1.4rem;font-weight:700;margin-bottom:10px">Marché e-commerce brésilien · 2016–2018</h3>
+          <p style="color:var(--m);font-size:.95rem;line-height:1.7;max-width:700px;margin-bottom:18px;">
+  Analyse réalisée à partir d’un dataset public de transactions e-commerce au Brésil.
+  L’objectif était d’explorer les comportements d’achat, les moyens de paiement dominants
+  et la performance logistique à travers différentes régions du pays.
+</p>
+          <div class="mys" style="margin:0;max-width:680px;font-size:.9rem">
+            "Les données ne mentent pas — mais encore faut-il savoir où chercher."
+          </div>
+        </div>
+        <a href="https://public.tableau.com/app/profile/elena.kervennic/viz/Brsilanalysee-commerce/Tableaudebord1"
+           class="btn bo bsm" target="_blank" style="white-space:nowrap;flex-shrink:0">↗ Plein écran</a>
+      </div>
+    </div>
+
+    <!-- 3 questions d'enquête -->
+    <div class="inv-q-grid">
+      <div class="inv-q">
+        <div class="inv-qnum">🔍 Indice 01</div>
+        <p>"Quels moyens de paiement dominent le marché brésilien ?"</p>
+      </div>
+      <div class="inv-q">
+        <div class="inv-qnum">🔍 Indice 02</div>
+        <p>"Quelles villes génèrent le plus de commandes ?"</p>
+      </div>
+      <div class="inv-q">
+        <div class="inv-qnum">🔍 Indice 03</div>
+        <p>"Les délais de livraison estimés sont-ils vraiment fiables ?"</p>
+      </div>
+    </div>
+
+    <!-- Dashboard Tableau encadré -->
+    <div class="inv-bd">
+<div class='tableauPlaceholder' style='position:relative;width:80%;margin:0 auto;padding-bottom:50%;'>        <noscript>
+          <img alt='Dashboard e-commerce Brésil'
+               src='https://public.tableau.com/static/images/Br/Brsilanalysee-commerce/Tableaudebord1/1_rss.png'
+               style='border:none'/>
+        </noscript>
+        <object class='tableauViz' style='position:absolute;top:0;left:0;width:100%;height:100%;display:block;border:none;'>
+          <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F'/>
+          <param name='embed_code_version' value='3'/>
+          <param name='site_root' value=''/>
+          <param name='name' value='Brsilanalysee-commerce/Tableaudebord1'/>
+          <param name='tabs' value='no'/>
+          <param name='toolbar' value='yes'/>
+          <param name='animate_transition' value='yes'/>
+          <param name='display_static_image' value='yes'/>
+          <param name='display_spinner' value='yes'/>
+          <param name='display_count' value='yes'/>
+          <param name='language' value='fr-FR'/>
+        </object>
+      </div>
+    </div>
+
+    <!-- Verdict final -->
+    <div class="inv-foot">
+      <div class="verdict-block">
+        <div class="verdict-label">✅ Verdict de l'enquête</div>
+        <p>
+          Le marché révèle une <strong>forte concentration sur São Paulo & Rio de Janeiro</strong>,
+          une <strong>domination du paiement par carte (carte de crédit)</strong>, et des délais
+          globalement respectés mais avec de <strong>fortes variations régionales</strong> —
+          piste directe d'optimisation logistique pour les vendeurs.
+        </p>
+      </div>
+      <div class="inv-tags" style="margin-top:16px">
+        <span class="inv-tag">📅 Mars 2026</span>
+        <span class="inv-tag">🛠️ Tableau Public</span>
+        <span class="inv-tag">🌐 96 000+ commandes analysées</span>
+        <span class="inv-tag">📍 Brésil · 2016–2018</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="cta2 reveal"><h2>Travaillons<br><span>ensemble</span></h2><p>Une idée, une opportunité ou juste envie d'échanger ?</p><a href="mailto:ekervennic@eugeniaschool.com" class="btn bf" style="margin:0 auto;display:inline-flex">📧 Envoyer un email</a></div>
+  <div class="ccs reveal">
+    <a href="mailto:ekervennic@eugeniaschool.com" class="ccard"><div class="ci" style="background:rgba(233,69,96,.15)">📧</div><div class="cn">Email</div><div class="csub">ekervennic@eugeniaschool.com</div></a>
+    <a href="https://www.linkedin.com/in/elena-k-60b559223" class="ccard" target="_blank"><div class="ci" style="background:rgba(0,119,181,.15)">💼</div><div class="cn">LinkedIn</div><div class="csub">elena-k-60b559223</div></a>
+    <a href="https://github.com/ekervennic" class="ccard" target="_blank"><div class="ci" style="background:rgba(255,255,255,.08)">💻</div><div class="cn">GitHub</div><div class="csub">ekervennic</div></a>
+    <a href="https://public.tableau.com/app/profile/elena.kervennic" class="ccard" target="_blank"><div class="ci" style="background:rgba(233,118,39,.15)">📊</div><div class="cn">Tableau Public</div><div class="csub">Voir mes dashboards</div></a>
+  </div>
+</section>
+<footer><p>✦ Conçu & développé par Elena Kervennic — 2026</p></footer>
+</div>
+
+<!-- MODALS -->
+<!-- MODAL #01 — Together -->
+<div class="mo" id="mo-c01" onclick="if(event.target===this)closeModal('c01')">
+  <div class="mb3">
+    <button class="mc2" onclick="closeModal('c01')">✕</button>
+    <div class="mcn">🔍 Case #01</div>
+    <div class="mt2">Together</div>
+    <div class="mbg">
+      <span class="sb sf">⭐ Projet phare</span>
+      <span class="sb sd">📱 Produit social</span>
+    </div>
+    <div class="mmy">"Comment créer une application sociale qui simplifie réellement l'organisation de sorties entre amis ?"</div>
+    <div class="ms">
+      <div class="msl">🔎 Le mystère</div>
+      <p style="color:var(--m);font-size:.9rem;line-height:1.7">
+        Organiser une sortie entre amis implique des dizaines d'échanges sur WhatsApp,
+        des sondages dispersés, des plans qui tombent. Comment centraliser tout ça dans
+        une seule app fluide et moderne ?
+      </p>
+    </div>
+    <div class="ms">
+      <div class="msl">🔧 Ce que j'ai construit</div>
+      <ul class="mli">
+        <li>Chat temps réel avec fil de discussion par sortie</li>
+        <li>Système de votes et RSVP pour valider les plans</li>
+        <li>Carte interactive avec suggestions de lieux via OpenAI</li>
+        <li>Feed social, stories et système de follow entre amis</li>
+        <li>Interface mobile-first, déployée via Vercel</li>
+      </ul>
+    </div>
+    <div class="ms">
+      <div class="msl">✅ Verdict</div>
+      <div class="mvd">Architecture full-stack maîtrisée de A à Z. Vibe coding avec Cursor = vélocité maximale pour un rendu production-ready.</div>
+    </div>
+    <div class="ms">
+      <div class="msl">🛠️ Stack</div>
+      <div class="mst">
+        <span class="mtag">Next.js</span><span class="mtag">TypeScript</span>
+        <span class="mtag">Supabase</span><span class="mtag">Tailwind</span>
+        <span class="mtag">OpenAI</span><span class="mtag">Cursor</span><span class="mtag">Vercel</span>
+      </div>
+    </div>
+    <div class="mln">
+      <a href="https://github.com/alexishonnorat/Together" class="btn bf bsm" target="_blank">💻 GitHub</a>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL #02 — Mood Film Finder -->
+<div class="mo" id="mo-c02" onclick="if(event.target===this)closeModal('c02')">
+  <div class="mb3">
+    <button class="mc2" onclick="closeModal('c02')">✕</button>
+    <div class="mcn">🔍 Case #02</div>
+    <div class="mt2">Mood Film Finder</div>
+    <div class="mbg">
+      <span class="sb sd">🎬 Data</span>
+      <span class="sb sn">IA · RAG</span>
+      <span class="sb sdv">6 500+ titres</span>
+    </div>
+    <div class="mmy">"Peut-on recommander un film en fonction de l'humeur d'un utilisateur plutôt que d'un simple genre ?"</div>
+    <div class="ms">
+      <div class="msl">🔎 Le mystère</div>
+      <p style="color:var(--m);font-size:.9rem;line-height:1.7">
+        Les plateformes de streaming recommandent par genre ou popularité.
+        Mais l'humeur du moment — envie de frissons, de rires, de réflexion — transcende ces catégories.
+        Comment créer un moteur qui pense comme un humain ?
+      </p>
+    </div>
+    <div class="ms">
+      <div class="msl">🔧 Ce que j'ai construit</div>
+      <ul class="mli">
+        <li>Scraping de 6 500+ films depuis JustWatch (Python, ~15h de run)</li>
+        <li>Vectorisation complète des données et architecture RAG from scratch</li>
+        <li>Pipeline : humeur → vecteur → similarité cosinus → recommandation</li>
+        <li>Interface interactive pour tester en live (démo intégrée)</li>
+      </ul>
+    </div>
+    <div class="ms">
+      <div class="msl">✅ Verdict</div>
+      <div class="mvd">Recommandation émotionnelle fonctionnelle — bien au-delà du filtre par genre classique. La démo est disponible dans le portfolio.</div>
+    </div>
+    <div class="ms">
+      <div class="msl">🛠️ Stack</div>
+      <div class="mst">
+        <span class="mtag">Python</span><span class="mtag">BeautifulSoup</span>
+        <span class="mtag">RAG</span><span class="mtag">Vectorisation</span><span class="mtag">IA</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL #04 — Plateforme Scolaire -->
+<div class="mo" id="mo-c04" onclick="if(event.target===this)closeModal('c04')">
+  <div class="mb3">
+    <button class="mc2" onclick="closeModal('c04')">✕</button>
+    <div class="mcn">🔍 Case #04</div>
+    <div class="mt2">Plateforme Scolaire</div>
+    <div class="mbg">
+      <span class="sb sg">🎓 Produit</span>
+      <span class="sb sd">Interface · UX</span>
+    </div>
+    <div class="mmy">"Comment centraliser tous les outils utiles aux étudiants dans une seule plateforme cohérente ?"</div>
+    <div class="ms">
+      <div class="msl">🔎 Le mystère</div>
+      <p style="color:var(--m);font-size:.9rem;line-height:1.7">
+        Les étudiants jonglent entre plusieurs outils : un agenda ici, un espace cours là,
+        les événements de l'école ailleurs. Comment concevoir une interface unique, fluide,
+        qui centralise tout ?
+      </p>
+    </div>
+    <div class="ms">
+      <div class="msl">🔧 Ce que j'ai construit</div>
+      <ul class="mli">
+        <li>Messagerie intégrée entre élèves et professeurs</li>
+        <li>Emploi du temps interactif et agenda glisser-déposer</li>
+        <li>Quiz d'entraînement avec suivi des scores</li>
+        <li>Événements proposés par l'école avec inscription en ligne</li>
+        <li>Espace cours : PDF par matière, ressources téléchargeables</li>
+      </ul>
+    </div>
+    <!-- Galerie screenshots -->
+    <div class="case-gallery">
+      <img src="https://raw.githubusercontent.com/ekervennic/Portefolio/main/ecole-un.png">
+      <img src="https://raw.githubusercontent.com/ekervennic/Portefolio/main/ecole-deux.png">
+      <img src="https://raw.githubusercontent.com/ekervennic/Portefolio/main/ecole-trois.png">
+      <img src="https://raw.githubusercontent.com/ekervennic/Portefolio/main/ecole-quatre.png">
+</div>
+    <div class="ms">
+      <div class="msl">✅ Verdict</div>
+      <div class="mvd">4 espaces distincts (messagerie, cours, agenda, quiz) dans une interface cohérente et fluide. Projet scolaire mené de l'idée au rendu final.</div>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL #05 — Hackathon Mirakl -->
+<div class="mo" id="mo-c05" onclick="if(event.target===this)closeModal('c05')">
+  <div class="mb3">
+    <button class="mc2" onclick="closeModal('c05')">✕</button>
+    <div class="mcn">🔍 Case #05</div>
+    <div class="mt2">Hackathon Mirakl</div>
+    <div class="hackathon-image">
+  <img src="https://raw.githubusercontent.com/ekervennic/Portefolio/main/gagnant.JPG" alt="Équipe gagnante hackathon">
+</div>
+    <div class="mbg">
+      <span class="sb sw">🏆 Winner</span>
+      <span class="sb sd">Data · Scraping</span>
+      <span class="sb sn">IA</span>
+    </div>
+    <div class="mwin">
+      <span style="font-size:2rem;flex-shrink:0">🏆</span>
+      <span>Hackathon remporté en équipe pour <strong>Mirakl</strong>. Solution élue meilleure réponse au problème proposé.</span>
+    </div>
+    <div class="mmy" style="margin-top:16px">"Comment automatiser la recherche de futurs candidats à partir d'une offre d'emploi ?"</div>
+    <div class="ms">
+      <div class="msl">🔎 Le mystère</div>
+      <p style="color:var(--m);font-size:.9rem;line-height:1.7">
+        Le sourcing RH est chronophage : parcourir LinkedIn manuellement, chercher des profils GitHub,
+        croiser les données des concurrents. Comment automatiser ce processus avec la data et l'IA ?
+      </p>
+    </div>
+    <div class="ms">
+      <div class="msl">🔧 Ce que j'ai construit</div>
+      <ul class="mli">
+        <li>Scraping LinkedIn & GitHub pour identifier les profils pertinents selon le poste</li>
+        <li>Scoring IA des candidats en fonction des compétences clés de l'offre</li>
+        <li>Scraping des concurrents pour détecter les talents à recruter</li>
+        <li>Interface centralisée avec profils filtrables, scorés et triés</li>
+      </ul>
+    </div>
+    <div class="ms">
+      <div class="msl">📈 Résultats</div>
+      <ul class="mli">
+        <li>Automatisation complète du sourcing — gain de temps majeur</li>
+        <li>Visualisation claire des candidats potentiels en un coup d'œil</li>
+        <li>Pipeline data + IA élu meilleur du hackathon</li>
+      </ul>
+    </div>
+    <div class="ms">
+      <div class="msl">✅ Verdict</div>
+      <div class="mvd">Processus RH chronophage transformé en flux automatisé. Solution reconnue comme la plus pertinente par le jury Mirakl.</div>
+    </div>
+    <div class="ms">
+      <div class="msl">🛠️ Stack</div>
+      <div class="mst">
+     <div class="mst">
+  <span class="mtag">Python</span>
+  <span class="mtag">Web Scraping</span>
+  <span class="mtag">IA</span>
+  <span class="mtag">Data Pipeline</span>
+  <span class="mtag">n8n</span>
+  <span class="mtag">Dust</span>
+</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL #03 — Chatbot Paroles (ENRICHI) -->
+<div class="mo" id="mo-c03" onclick="if(event.target===this)closeModal('c03')">
+  <div class="mb3" style="border-color:rgba(167,139,250,.3);">
+    <button class="mc2" onclick="closeModal('c03')">✕</button>
+    <div class="mcn">🔍 Case #03</div>
+    <div class="mt2">Chatbot Paroles</div>
+    <div class="mbg">
+      <span class="sb sn">🎵 NLP · RAG</span>
+      <span class="sb sd">LLM · FAISS</span>
+      <span class="sb sdv">1 872 chansons</span>
+    </div>
+    <div class="mmy">"Un agent peut-il identifier une musique depuis un extrait approximatif, partiel ou mal orthographié de paroles ?"</div>
+
+    <!-- Démo visuelle inline -->
+    <div style="background:linear-gradient(145deg,#0b0818,#110c22);border:1px solid rgba(167,139,250,.22);border-radius:16px;padding:18px 20px;margin:20px 0;position:relative;overflow:hidden;">
+      <div style="position:absolute;top:-24px;right:-24px;width:90px;height:90px;background:radial-gradient(circle,rgba(233,69,96,.32),transparent 68%);border-radius:50%;pointer-events:none;"></div>
+      <div style="position:absolute;bottom:-20px;left:-20px;width:70px;height:70px;background:radial-gradient(circle,rgba(124,58,237,.28),transparent 68%);border-radius:50%;pointer-events:none;"></div>
+      <div style="font-family:'Space Mono',monospace;font-size:.58rem;color:rgba(167,139,250,.75);letter-spacing:2px;text-transform:uppercase;margin-bottom:14px;display:flex;align-items:center;gap:6px;position:relative;z-index:1;">♪ Musixmatch · Démo RAG</div>
+      <div style="display:flex;flex-direction:column;gap:9px;position:relative;z-index:1;">
+        <div style="font-size:.78rem;color:rgba(255,255,255,.5);padding:7px 12px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:10px 10px 2px 10px;align-self:flex-end;max-width:78%;font-style:italic;">« j'ai demandé à la lune, elle n'a rien voulu savoir »</div>
+        <div style="font-size:.78rem;color:#ddd4ff;padding:8px 14px;background:rgba(167,139,250,.12);border:1px solid rgba(167,139,250,.28);border-radius:10px 10px 10px 2px;align-self:flex-start;max-width:84%;">🎵 <strong style="color:#c4b5fd;">Indochine — J'ai demandé à la lune</strong><br><span style="font-size:.64rem;color:rgba(74,222,128,.85);font-family:'Space Mono',monospace;">✓ Similarité : 97%</span></div>
+        <div style="font-size:.78rem;color:rgba(255,255,255,.5);padding:7px 12px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:10px 10px 2px 10px;align-self:flex-end;max-width:78%;font-style:italic;">« les chamz elyse »</div>
+        <div style="font-size:.78rem;color:#ddd4ff;padding:8px 14px;background:rgba(167,139,250,.12);border:1px solid rgba(167,139,250,.28);border-radius:10px 10px 10px 2px;align-self:flex-start;max-width:84%;">🎵 <strong style="color:#c4b5fd;">Joe Dassin — Les Champs-Élysées</strong><br><span style="font-size:.64rem;color:rgba(74,222,128,.85);font-family:'Space Mono',monospace;">✓ Similarité : 94% · tolérance orthographique</span></div>
+      </div>
+    </div>
+
+    <div class="ms">
+      <div class="msl">🔧 Ce que j'ai construit</div>
+      <ul class="mli">
+        <li>Vectorisation de <strong>1 872 chansons françaises</strong> avec OpenAI Embeddings (text-embedding-3-large)</li>
+        <li>Architecture RAG : extrait flou → K voisins FAISS → réponse LLM contextuelle</li>
+        <li>Interface chatbot Flask avec gestion des paroles imprécises, mal orthographiées ou partielles</li>
+        <li>Recherche vectorielle via <strong>FAISS</strong> — bien plus robuste que le mot-clé classique</li>
+      </ul>
+    </div>
+    <div class="ms">
+      <div class="msl">✅ Verdict</div>
+      <div class="mvd">La recherche sémantique surpasse le mot-clé classique. Identification réussie même avec des paroles très approximatives ou incomplètes.</div>
+    </div>
+    <div class="ms">
+      <div class="msl">🛠️ Stack</div>
+      <div class="mst">
+        <span class="mtag">Python</span>
+        <span class="mtag">Flask</span>
+        <span class="mtag">OpenAI Embeddings</span>
+        <span class="mtag">FAISS</span>
+        <span class="mtag">RAG</span>
+        <span class="mtag">HTML/CSS/JS</span>
+      </div>
+    </div>
+    <div class="mln">
+      <a href="https://github.com/arquam-elglaoui/Project-AI" class="btn bf bsm" target="_blank">💻 GitHub</a>
+    </div>
+  </div>
+</div>
+<div class="cpulse"></div>
+<div class="ctt">👋 Pose-moi une question !</div>
+
+<button id="cbtn" onclick="toggleChat()" type="button" aria-label="Ouvrir le chatbot">
+  <img src="https://raw.githubusercontent.com/ekervennic/Portefolio/main/photoprofil.jpg" alt="Elena">
+</button>
+
+<div id="cw">
+  <div class="chdr">
+    <div class="cav">
+      <img src="https://raw.githubusercontent.com/ekervennic/Portefolio/main/photoprofil.jpg" alt="Elena">
+    </div>
+    <div class="chi">
+      <div class="name">Elena Kervennic</div>
+      <div class="st">En ligne</div>
+    </div>
+    <button class="ccl" onclick="toggleChat()">✕</button>
+  </div>
+  <div class="cm" id="cmsg"></div>
+  <div class="csg" id="csugg">
+    <button class="sug" onclick="ask('Qui es-tu ?')">Qui es-tu ?</button>
+    <button class="sug" onclick="ask('Enquêtes ?')">Enquêtes</button>
+    <button class="sug" onclick="ask('Stack ?')">Stack</button>
+    <button class="sug" onclick="ask('Contact ?')">Contact</button>
+  </div>
+  <div class="cir">
+    <input class="cinp" id="cinp" placeholder="Pose-moi une question..." onkeydown="if(event.key==='Enter')sendMsg()"/>
+    <button class="csnd" onclick="sendMsg()">➤</button>
+  </div>
+</div>
+
+<script type="text/javascript" src="https://public.tableau.com/javascripts/api/viz_v1.js"></script>
+<script>
+const cur=document.getElementById('cursor'),cff=document.getElementById('cf');
+let mx=0,my=0,fx=0,fy=0;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx-6+'px';cur.style.top=my-6+'px';});
+setInterval(()=>{fx+=(mx-fx)*.15;fy+=(my-fy)*.15;cff.style.left=fx-18+'px';cff.style.top=fy-18+'px';},16);
+function ah(s){document.querySelectorAll(s).forEach(el=>{el.addEventListener('mouseenter',()=>{cur.style.transform='scale(2)';cff.style.transform='scale(1.5)';});el.addEventListener('mouseleave',()=>{cur.style.transform='';cff.style.transform='';});});}
+ah('a,button,.cf,.cc,.sc,.bn,.mp,.tb,.sug,.cinp,.fc,.inv-q,.ccard,.ebtn,.hnote');
+const SUSPECTS =[{e:'👾',n:'THE SCRAPER',r:'500K €',s:'act'},{e:'🤖',n:'AGENT RAG',r:'750K €',s:'act'},{e:'🐍',n:'PYTHON GHOUL',r:'900K €',s:'cap'},{e:'💾',n:'DATA DONNA',r:'600K €',s:'act'},{e:'🧠',n:'LLM MAESTRO',r:'1M €',s:'act'},{e:'⚙️',n:'MAKE PHANTOM',r:'400K €',s:'cap'},{e:'📊',n:'DASHBOARD',r:'550K €',s:'cap'},{e:'🖱️',n:'CURSOR WIZARD',r:'800K €',s:'act'},{e:'🏆',n:'MIRAKL WINNER',r:'950K €',s:'cap'},{e:'🎬',n:'MOOD MATCH',r:'300K €',s:'cap'},{e:'🔍',n:'GEO GHOST',r:'450K €',s:'act'},{e:'🌐',n:'DUST AGENT',r:'700K €',s:'act'}];
+const fw=document.getElementById('fw'),ro=[-4,-2,-1,0,1,2,3,-3,2,-1,0,1];
+SUSPECTS.forEach((s,i)=>{const d=document.createElement('div');d.className='fp2';d.style.transform=`rotate(${ro[i]}deg)`;d.innerHTML=`<div class="fp2-em">${s.e}</div><div class="fp2-n">${s.n}</div><div class="fp2-r">${s.r}</div><div class="stamp ${s.s}">${s.s==='cap'?'CAPTURÉ':'RECHERCHÉ'}</div>`;fw.appendChild(d);});
+const sq=['Ouverture du dossier…','6 cas d\'enquête chargés…','Hackathon Mirakl 🏆…','Préparez-vous…'];
+let si=0;const lt=document.getElementById('lt'),lbf=document.getElementById('lbf'),eb=document.getElementById('ebtn');
+function nxt(){lt.style.animation='none';lt.offsetHeight;lt.style.animation='lfa .4s forwards';lt.textContent=sq[si];lbf.style.width=((si+1)/sq.length*100)+'%';si++;if(si<sq.length)setTimeout(nxt,750);else setTimeout(()=>{eb.classList.add('show');document.querySelector('.ldots').style.display='none';},600);}
+function hideLoader(){document.getElementById('loader').classList.add('out');setTimeout(()=>document.getElementById('loader').style.display='none',1300);}
+setTimeout(nxt,700);
+const cv=document.getElementById('bgc'),cx=cv.getContext('2d');let W,H;
+function rs(){W=cv.width=innerWidth;H=cv.height=innerHeight;}rs();addEventListener('resize',rs);
+const sts=Array.from({length:60},()=>({x:Math.random()*3000,y:Math.random()*3000,r:Math.random()+.2,sp:Math.random()*.3+.1,o:Math.random()}));
+function ds(){cx.clearRect(0,0,W,H);sts.forEach(s=>{s.o+=s.sp*.006;if(s.o>1||s.o<0)s.sp*=-1;cx.beginPath();cx.arc(s.x%W,s.y%H,s.r,0,Math.PI*2);cx.fillStyle=`rgba(255,255,255,${s.o*.25})`;cx.fill();});requestAnimationFrame(ds);}ds();
+new IntersectionObserver(([e])=>document.getElementById('snav').classList.toggle('vis',!e.isIntersecting),{threshold:.1}).observe(document.getElementById('hero'));
+const tc=['Python','Tableau','Power BI','Next.js','Supabase','Make','Airtable','Dust','Cursor','TypeScript','Scraping','RAG','Vectorisation','Agents LLM','OpenAI','Vercel','N8N','Mirakl 🏆'];
+const tk=document.getElementById('ticker');tk.innerHTML=[...tc,...tc].map(n=>`<span class="ti2"><span class="td2"></span>${n}</span>`).join('');
+const ph=['Investigatrice Data 🔍','Data Analyst & IA','Hackathon Winner 🏆'];
+let pi=0,ci=0,dl=false;const ty=document.getElementById('typed');
+function typ(){const p=ph[pi];if(!dl){ty.textContent=p.slice(0,++ci);if(ci===p.length){dl=true;setTimeout(typ,1800);return;}}else{ty.textContent=p.slice(0,--ci);if(!ci){dl=false;pi=(pi+1)%ph.length;}}setTimeout(typ,dl?60:90);}setTimeout(typ,4800);
+const SK={dev:[{e:'🐍',n:'Python',l:'Expert',w:85},{e:'📊',n:'Tableau',l:'Avancé',w:80},{e:'📉',n:'Power BI',l:'Avancé',w:72},{e:'🔍',n:'Web Scraping',l:'Avancé',w:82},{e:'🧮',n:'RAG+Vectorisation',l:'Avancé',w:78},{e:'⚛️',n:'Next.js',l:'Intermédiaire',w:65},{e:'🌐',n:'HTML/CSS',l:'Expert',w:88},{e:'📈',n:'Dataiku',l:'Intermédiaire',w:70}],auto:[{e:'🔗', n:'n8n', l:'Avancé', w:80},{e:'🧠',n:'Agents LLM',l:'Avancé',w:82},{e:'🤖',n:'Dust',l:'Avancé',w:82},{e:'🔄',n:'Make',l:'Avancé',w:85},{e:'🗄️',n:'Airtable',l:'Expert',w:88},{e:'✏️',n:'Cursor',l:'Avancé',w:75},{e:'⚡',n:'Supabase',l:'Intermédiaire',w:65}],mkt:[{e:'🔎',n:'SEO',l:'Avancé',w:80},{e:'🌐',n:'GEO',l:'Avancé',w:75},{e:'✍️',n:'Rédaction auto',l:'Avancé',w:85},{e:'📰',n:'Content Strategy',l:'Avancé',w:78}]};
+Object.entries(SK).forEach(([k,a])=>{const el=document.getElementById('tab-'+k);a.forEach(s=>{el.innerHTML+=`<div class="sc"><div class="skt"><div class="ske">${s.e}</div><div class="skl">${s.l}</div></div><div class="skn">${s.n}</div><div class="skb"><div class="skf" data-w="${s.w}"></div></div></div>`;});});
+const ob=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('visible');ob.unobserve(x.target);}}),{threshold:.1});
+document.querySelectorAll('.reveal,.rl,.rr').forEach(el=>ob.observe(el));
+const ob2=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.querySelectorAll('.skf').forEach(b=>b.style.width=b.dataset.w+'%');}),{threshold:.2});
+document.querySelectorAll('.sp').forEach(p=>ob2.observe(p));
+function switchTab(id,e){document.querySelectorAll('.sp').forEach(p=>p.classList.remove('active'));document.querySelectorAll('.tb').forEach(b=>b.classList.remove('active'));document.getElementById('tab-'+id).classList.add('active');e.target.classList.add('active');setTimeout(()=>document.querySelectorAll('#tab-'+id+' .skf').forEach(b=>b.style.width=b.dataset.w+'%'),100);}
+function openModal(id){document.getElementById('mo-'+id).classList.add('open');document.body.style.overflow='hidden';}
+function closeModal(id){document.getElementById('mo-'+id).classList.remove('open');document.body.style.overflow='';}
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){document.querySelectorAll('.mo.open').forEach(m=>m.classList.remove('open'));document.body.style.overflow='';}});
+const MD={aventure:{l:'🚀 Aventure',f:[{p:"🌍",t:"Indiana Jones",y:"1981"},{p:"🚀",t:"Interstellar",y:"2014"},{p:"🧙",t:"LOTR",y:"2001"},{p:"⚡",t:"Mad Max",y:"2015"}]},rire:{l:'😂 Bonne humeur',f:[{p:"🎭",t:"The Office",y:"2005"},{p:"😂",t:"Brooklyn 99",y:"2013"},{p:"🐒",t:"Superbad",y:"2007"},{p:"🎤",t:"Borat",y:"2006"}]},pleurer:{l:'😢 Émotions',f:[{p:"🌊",t:"Titanic",y:"1997"},{p:"🎻",t:"Schindler's List",y:"1993"},{p:"🌸",t:"Your Name",y:"2016"},{p:"🐾",t:"Marley & Me",y:"2008"}]},frissons:{l:'😱 Frissons',f:[{p:"🔪",t:"Get Out",y:"2017"},{p:"👁️",t:"Hereditary",y:"2018"},{p:"🕷️",t:"Midsommar",y:"2019"},{p:"🩸",t:"The Shining",y:"1980"}]},romance:{l:'💕 Romance',f:[{p:"💌",t:"Notting Hill",y:"1999"},{p:"🌹",t:"La La Land",y:"2016"},{p:"☀️",t:"Before Sunrise",y:"1995"},{p:"🎡",t:"Amélie",y:"2001"}]},reflexion:{l:'🧠 Réflexion',f:[{p:"🌀",t:"Inception",y:"2010"},{p:"🤖",t:"Ex Machina",y:"2014"},{p:"🐚",t:"Ghost in Shell",y:"1995"},{p:"🌌",t:"2001 Odyssey",y:"1968"}]}};
+function pickMood(m,btn){document.querySelectorAll('.mp').forEach(b=>b.classList.remove('active'));btn.classList.add('active');const r=document.getElementById('moodResult'),g=document.getElementById('films'),l=document.getElementById('moodLabel');r.classList.remove('show');l.textContent=MD[m].l;g.innerHTML=MD[m].f.map(f=>`<div class="fc"><div class="fp3">${f.p}</div><div class="fti">${f.t}</div><div class="fy">${f.y}</div></div>`).join('');setTimeout(()=>r.classList.add('show'),60);}
+const CR = {
+  intro:
+`Salut 👋 Moi c’est Elena Kervennic.
+
+Je suis étudiante en data & IA, et je construis des projets autour de l’analyse de données, du scraping, de l’automatisation et des agents IA. 
+Je suis aussi en alternance à la FDJ dans un service data, où j’apprends à collecter, explorer et analyser des données pour produire des insights utiles.`,
+
+  stack:
+`Mon stack est orienté data, IA et automatisation 🛠️
+
+Côté data : Python, Tableau, Power BI, scraping, RAG et vectorisation.
+Côté IA/automation : Dust, Make, n8n, Airtable, agents LLM.
+Côté produit : Next.js, Supabase, TypeScript et HTML/CSS.
+
+J’aime surtout relier la data à des cas d’usage concrets.`,
+
+  projects:
+`J’ai structuré mon portfolio comme des enquêtes 🔍
+
+• Together : une app sociale pour organiser des sorties entre amis.
+• Mood Film Finder : un moteur de recommandation de films selon l’humeur.
+• Chatbot Paroles : un agent capable d’identifier une chanson à partir de paroles.
+• Plateforme scolaire : une interface regroupant cours, agenda, quiz et messagerie.
+• Hackathon Mirakl : projet gagnant autour de l’automatisation du sourcing RH.
+• Dashboard Brésil : analyse e-commerce avec Tableau.`,
+
+  together:
+`Together est mon projet produit le plus complet 🚀
+
+L’idée : simplifier l’organisation de sorties entre amis.
+J’ai travaillé sur une app avec chat temps réel, votes, RSVP, carte interactive, suggestions IA et feed social.
+
+C’est un projet qui montre ma capacité à passer d’une idée à une interface complète.`,
+
+  mood:
+`Mood Film Finder est un projet data + IA 🎬
+
+L’objectif était de recommander des films selon l’humeur de l’utilisateur, plutôt que seulement par genre.
+J’ai travaillé sur du scraping, de la vectorisation et une logique de recommandation.
+
+Une démo est disponible dans le dossier du projet pour tester l’outil.`,
+
+  lyrics:
+`Le Chatbot Paroles est un projet NLP 🎵
+
+L’idée : retrouver une chanson à partir d’un extrait de paroles, même approximatif.
+Le projet utilise des embeddings, FAISS et une logique RAG pour retrouver les titres les plus proches.`,
+
+  mirakl:
+`Le hackathon Mirakl est un projet dont je suis particulièrement fière 🏆
+
+Avec mon groupe, nous avons gagné en répondant à une problématique de recrutement :
+automatiser la recherche de profils pertinents à partir d’une offre d’emploi.
+
+Nous avons scrapé LinkedIn, GitHub et des concurrents, puis construit une interface pour centraliser les profils détectés. 
+La solution combinait scraping, IA, n8n, Dust et logique de scoring.`,
+
+  tableau:
+`Le dashboard Brésil est mon projet data analyse 📊
+
+J’ai analysé un dataset e-commerce brésilien pour comprendre les comportements d’achat, les moyens de paiement dominants et les performances de livraison.
+
+L’objectif n’était pas juste de faire des graphiques, mais de faire ressortir des insights exploitables.`,
+
+  contact:
+`Tu peux me contacter par email ou LinkedIn 📬
+
+Email : ekervennic@eugeniaschool.com
+LinkedIn : elena-k-60b559223
+
+Je suis ouverte aux échanges autour de la data, de l’IA, de l’automatisation et des projets produit.`,
+
+  fallback:
+`Je n’ai pas bien compris ta question 😅
+
+Tu peux me demander par exemple :
+• “Présente-toi”
+• “C’est quoi ton stack ?”
+• “Parle-moi du hackathon”
+• “Explique Mood Film Finder”
+• “Comment te contacter ?”`
+};
+
+function getBR(m){
+  m = m.toLowerCase();
+
+  if(/bonjour|hello|salut|présente|qui es|toi|parcours/.test(m)) return CR.intro;
+  if(/stack|compétence|outil|techno|technologie|skills/.test(m)) return CR.stack;
+  if(/projet|enquête|portfolio|réalis/.test(m) && !/together|mood|film|parole|chanson|mirakl|hackathon|tableau|brésil/.test(m)) return CR.projects;
+  if(/together|sortie|social/.test(m)) return CR.together;
+  if(/mood|film|recommandation/.test(m)) return CR.mood;
+  if(/parole|chanson|musique|lyrics/.test(m)) return CR.lyrics;
+  if(/mirakl|hackathon|gagn/.test(m)) return CR.mirakl;
+  if(/tableau|dashboard|brésil|dataviz|e-commerce/.test(m)) return CR.tableau;
+  if(/contact|mail|linkedin|email/.test(m)) return CR.contact;
+
+  return CR.fallback;
+}
+function avH(){return`<div class="mav2"><img src="https://raw.githubusercontent.com/ekervennic/Portefolio/main/photoprofil.jpg" onerror="this.parentElement.innerHTML='👩'"/></div>`;}
+function addMsg(txt,who){const m=document.getElementById('cmsg'),d=document.createElement('div');d.className='msg '+who;d.innerHTML=(who==='bot'?avH():`<div class="mui">Moi</div>`)+`<div class="bbl">${txt.replace(/\n/g,'<br>')}</div>`;m.appendChild(d);m.scrollTop=m.scrollHeight;}
+function showTyp(){const m=document.getElementById('cmsg'),d=document.createElement('div');d.className='msg bot';d.id='typ';d.innerHTML=avH()+`<div class="bbl"><div class="tyd"><span></span><span></span><span></span></div></div>`;m.appendChild(d);m.scrollTop=m.scrollHeight;}
+function ask(q){document.getElementById('csugg').style.display='none';addMsg(q,'user');showTyp();setTimeout(()=>{document.getElementById('typ')?.remove();addMsg(getBR(q),'bot');},900+Math.random()*500);}
+function sendMsg(){const i=document.getElementById('cinp'),msg=i.value.trim();if(!msg)return;i.value='';document.getElementById('csugg').style.display='none';addMsg(msg,'user');showTyp();setTimeout(()=>{document.getElementById('typ')?.remove();addMsg(getBR(msg),'bot');},900+Math.random()*500);}
+let co=false;
+function toggleChat(){co=!co;document.getElementById('cw').classList.toggle('open',co);document.querySelector('.ctt').style.display='none';document.querySelector('.cpulse').style.display=co?'none':'block';if(co&&!document.getElementById('cmsg').children.length)setTimeout(()=>addMsg("Bonjour 👋 Je suis Elena — 6 enquêtes résolues et un hackathon gagné 🏆 Pose-moi une question !",'bot'),400);}
+</script></body></html>
